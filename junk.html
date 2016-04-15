@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<!-- Bootstrap CSS v3.0.0 or higher -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- FormValidation CSS file -->
+<link rel="stylesheet" href="dist/css/formValidation.min.css">
+
+</head>
+
+<body>
+
+
+<form id="formvals" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Event name</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="name" />
+        </div>
+    </div>
+    
+    
+                                        <div class="form-group">
+                                            <label class="col-xs-3 control-label">Email Address</label>
+                                            <div class="col-xs-5">
+	                                            <input type="email" class="form-control" placeholder=" Your Email" name="email" />
+    	                                        <p class="help-block text-danger"></p>
+                                            </div>    
+                                        </div>
+
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <div id="showresp">
+            	<input type="button"  id="frmsbmt" value="Save" class="btn btn-default w300">
+            </div>
+        </div>
+        
+    </div>
+    
+</form>
+
+<!-- jQuery v1.9.1 or higher -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+
+<!-- FormValidation plugin and the class supports validating Bootstrap form -->
+<script src="dist/js/formValidation.min.js"></script>
+<script src="dist/js/framework/bootstrap.min.js"></script>
+<script src="js/view/index.js"></script>
+
+</body>
+</html>

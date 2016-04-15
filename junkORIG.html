@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<!-- Bootstrap CSS v3.0.0 or higher -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
+<!-- FormValidation CSS file -->
+<link rel="stylesheet" href="dist/css/formValidation.min.css">
+
+</head>
+
+<body>
+
+
+<form id="eventForm" class="form-horizontal">
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Event name</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="name" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Location</label>
+        <div class="col-xs-5">
+            <input type="text" class="form-control" name="location" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Start date</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="startDate" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">End date</label>
+        <div class="col-xs-4">
+            <input type="text" class="form-control" name="endDate" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-9 col-xs-offset-3">
+            <div id="showresp">
+            	<input type="button"  id="ue_pd_st" value="Save" class="btn btn-default w300">
+            </div>
+        </div>
+        
+    </div>
+    
+</form>
+
+<!-- jQuery v1.9.1 or higher -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+
+<!-- FormValidation plugin and the class supports validating Bootstrap form -->
+<script src="dist/js/formValidation.min.js"></script>
+<script src="dist/js/framework/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('#eventForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            name: {
+                validators: {
+                    notEmpty: {
+                        message: 'The event name is required'
+                    }
+                }
+            },
+            location: {
+                validators: {
+                    notEmpty: {
+                        message: 'The location is required'
+                    }
+                }
+            },
+            startDate: {
+                validators: {
+                    notEmpty: {
+                        message: 'The start date is required'
+                    },
+                    date: {
+                        message: 'The start date is not valid',
+                        format: 'YYYY-MM-DD',
+                        max: 'endDate'
+                    }
+                },
+                onSuccess: function(e, data) {
+                    // data.fv is the plugin instance
+                    // Revalidate the end date if it's not valid
+                    if (!data.fv.isValidField('endDate')) {
+                        data.fv.revalidateField('endDate');
+                    }
+                }
+            },
+            endDate: {
+                validators: {
+                    notEmpty: {
+                        message: 'The end date is required'
+                    },
+                    date: {
+                        message: 'The end date is not valid',
+                        format: 'YYYY-MM-DD',
+                        min: 'startDate'
+                    }
+                },
+                onSuccess: function(e, data) {
+                    // data.fv is the plugin instance
+                    // Revalidate the start date if it's not valid
+                    if (!data.fv.isValidField('startDate')) {
+                        data.fv.revalidateField('startDate');
+                    }
+                }
+            }
+        }
+    });
+	$('#ue_pd_st').on("click",function(e){
+			$("#eventForm").data('formValidation').validate()
+			if(!$("#eventForm").data('formValidation').isValid())
+				return false;
+			e = e || window.event;
+			e.preventDefault();
+			$.ajax({
+				url:"https://crucore.com/contact_me.php",
+				data:$("#eventForm").serialize(),
+				dataType:"JSON",
+				type:"POST",
+				success: function(data){
+					if(data.success) {
+						var msg = data.msg;
+						$("#showresp").html(msg);
+						// window.location="http://essentials24.org";
+					  }
+					else {
+						alert("You are at Failure");
+						var ply = new Ply({el:data.error});
+						ply.open();
+					}
+				}
+			});
+		});
+});
+</script>
+
+
+
+</body>
+</html>
