@@ -570,20 +570,20 @@ header .header-content .header-content-inner p {
 }
 /* --------------- bottom diagonal --------------- */
 .pre_s_2 {
-	border-left: 800px solid transparent;
+	border-left: 2000px solid transparent;
 	border-right: 0px solid transparent;
 	border-bottom: 40px solid #fff;
 }
 /* top diagonals */
 .post_s_2 {
 	top:0;
-	border-left: 800px solid transparent;
+	border-left: 2000px solid transparent;
 	border-right: 0px solid transparent;
 	border-top: 40px solid #fff;
 }
 .post_s_2-light {
 	top:0;
-	border-left: 800px solid transparent;
+	border-left: 2000px solid transparent;
 	border-right: 0px solid transparent;
 	border-top: 40px solid #F5F5F5;
 }
