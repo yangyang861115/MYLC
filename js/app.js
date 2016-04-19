@@ -27,20 +27,24 @@
                 templateUrl: "partials/support.html"
             })
             .otherwise({
-                redictTo: "/"
+                redirectTo: "/"
             });
     }
+
     /**
      * Controls the page
      */
 
     app.controller('PageCtrl', pageCtrl);
 
-    function pageCtrl($scope, $location){
+    function pageCtrl($scope, $location, $http, $sce) {
+        $scope.renderHtml = function (html_code) {
+            return $sce.trustAsHtml(html_code);
+        }
 
         //show or hide the jumbotron
-        $scope.checkURl = function() {
-            if($location.url() == '/' || $location.url().indexOf('/#') > -1) return true;
+        $scope.checkURl = function () {
+            if ($location.url() == '/' || $location.url().indexOf('/#') > -1) return true;
             return false;
         }
 
@@ -50,105 +54,50 @@
             isSecondOpen: false,
             isThirdOpen: false
         };
+        //form: learnFm supFm
+        $scope.EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
 
-        $scope.load = function() {
-            // do your $() stuff here
+        $scope.user = {"post_actions": "joinacts"};
+        $scope.support = {"post_actions": "support"}
+
+        $scope.subscribe = function (usr) {
+            $http.post("https://crucore.com/api.php", usr)
+                .success(function (res) {
+                    if (res.success) {
+                        $scope.msg = res.msg;
+                    } else {
+                        alert("You are at Failure");
+                        //var ply = new Ply({el: data.error});
+                        //ply.open();
+                    }
+                });
+
+        };
+
+        $scope.getSupport = function (support) {
+            $http.post("https://crucore.com/api.php", support)
+                .success(function (res) {
+                    if (res.success) {
+                        $scope.supmsg = res.msg;
+                    } else {
+                        alert("You are at Failure");
+                        //var ply = new Ply({el: data.error});
+                        //ply.open();
+                    }
+                });
+        }
+
+        $scope.load = function () {
 
             $('#mainNav').affix({
                 offset: {
                     top: 100
                 }
             });
-
-            $('#formvals').formValidation({
-                framework: 'bootstrap',
-                icon: {
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
-                fields: {
-                    nameline: {
-                        verbose:false,
-                        icon: false,
-                        trigger: 'blur',
-                        validators: {
-                            notEmpty: {
-                                message: 'Your name is required'
-                            }
-                        }
-                    },
-                    email: {
-                        verbose:false,
-                        icon: false,
-                        trigger: 'blur',
-                        validators: {
-                            notEmpty: {
-                                message: 'The email is required and cannot be empty'
-                            },
-                            emailAddress: {
-                                message: 'The value is not a standard email address'
-                            },
-                            regexp: {
-                                regexp: '^[^@\\s]+@([^@\\s]+\\.)+[^@\\s]+$',
-                                message: 'The value is not a valid email address'
-                            }
-                        }
-                    }
-                }
-            });
-            $('#frmsbmt').on("click",function(e){
-                $("#formvals").data('formValidation').validate();
-                if(!$("#formvals").data('formValidation').isValid()) {
-                    return false; }
-                e = e || window.event;
-                e.preventDefault();
-                $.ajax({
-                    url:"https://crucore.com/api.php",
-                    data:$("#formvals").serialize(),
-                    dataType:"JSON",
-                    type:"POST",
-                    success: function(data){
-                        if(data.success) {
-                            var msg = data.msg;
-                            $("#showresp").html(msg);
-                            // window.location="http://essentials24.org";
-                        }
-                        else {
-                            alert("You are at Failure");
-                            var ply = new Ply({el:data.error});
-                            ply.open();
-                        }
-                    }
-                });
-            });
-
         };
 
         //don't forget to call the load function
         $scope.load();
-
-
     }
 
 })();
-
-
-
-//
-///**
-// * Controls all other Pages
-// */
-//app.controller('PageCtrl', function ( /* $scope, $location, $http */ ) {
-//    console.log("Page Controller reporting for duty.");
-//
-//    // Activates the Carousel
-//    $('.carousel').carousel({
-//        interval: 5000
-//    });
-//
-//    // Activates Tooltips for Social Links
-//    $('.tooltip-social').tooltip({
-//        selector: "a[data-toggle=tooltip]"
-//    })
-//});

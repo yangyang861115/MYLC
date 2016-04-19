@@ -1,3 +1,27 @@
-div.panel-heading {
-    background-color: #C98A01;
+.panel-default>.panel-heading  {
+    background-color: #F9B625;
+}
+
+#learnFm input.ng-invalid.ng-touched {
+    border-color: #a94442;
+}
+
+#learnFm input.ng-valid.ng-touched {
+    border-color: #3c763d;
+}
+
+#supFm input.ng-invalid.ng-touched {
+    border-color: #a94442;
+}
+
+#supFm input.ng-valid.ng-touched {
+    border-color: #3c763d;
+}
+
+#supFm textarea.ng-invalid.ng-touched {
+    border-color: #a94442;
+}
+
+#supFm textarea.ng-valid.ng-touched {
+    border-color: #3c763d;
 }
