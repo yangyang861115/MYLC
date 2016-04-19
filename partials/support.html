@@ -31,7 +31,7 @@
                     <!--- form row begins -->
                     <div class="col-lg-8 col-lg-offset-2 text-center">
                         <form id="supFm" name="supFm" class="form" novalidate ng-if="!supmsg">
-                            <input type="hidden" name="post_actions" value="support" />
+                            <input type="hidden" ng-model="support.post_actions" ng-init="support.post_actions='support'"/>
                             <div class="row">
                                 <div class="form-group col-xs-12">
                                     <label class="sr-only" for="name">your name</label>
@@ -84,7 +84,7 @@
                                 <div id="success">
                                     <div class="form-group col-xs-12">
                                         <button type="submit" id="frmsbmt" class="btn btn-primary btn-xl wow tada"
-                                                ng-disabled="supFm.$invalid" ng-click="getSupport(support)">
+                                                ng-disabled="supFm.$invalid" ng-click="submitFm(support)">
                                             Get Help<i class="fa fa-send"></i>
                                         </button>
                                     </div>

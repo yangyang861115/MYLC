@@ -1,5 +1,5 @@
-<nav id="mainNav" class="navbar navbar-default navbar-fixed-top affix-top"
-     data-spy="affix" data-offset-top="100">
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top" scroll-position="scroll"
+     ng-class="{'affix-top': scroll < 100, 'affix': scroll >100}">
     <div class="container-fluid" ng-class="{'bg-primary' : checkURL()}" >
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -9,20 +9,20 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand page-scroll" href="#/"> Making Your Life Count</a>
+            <a class="navbar-brand " href="#/"> Making Your Life Count</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="page-scroll" href="#/about" data-target="#about">About</a>
+                    <a  href="#/about" data-target="#about">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#/resources" data-target="#resources">Resources</a>
+                    <a  href="#/resources" data-target="#resources">Resources</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#/radio" data-target="#radio">Radio</a>
+                    <a  href="#/radio" data-target="#radio">Radio</a>
                 </li>
                 <!-- <li>
                         <a class="page-scroll" href="stories.html">Stories</a>

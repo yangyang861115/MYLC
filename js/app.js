@@ -31,6 +31,23 @@
             });
     }
 
+    app.directive('scrollPosition', function($window) {
+        return {
+            scope: {
+                scroll: '=scrollPosition'
+            },
+            link: function(scope, element, attrs) {
+                var windowEl = angular.element($window);
+                var handler = function() {
+                    scope.scroll = windowEl.scrollTop();
+                }
+                windowEl.on('scroll', scope.$apply.bind(scope, handler));
+                handler();
+            }
+        };
+    });
+
+
     /**
      * Controls the page
      */
@@ -57,14 +74,14 @@
         //form: learnFm supFm
         $scope.EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
 
-        $scope.user = {"post_actions": "joinacts"};
-        $scope.support = {"post_actions": "support"}
 
-        $scope.subscribe = function (usr) {
+        $scope.submitFm = function (usr) {
+
             $http.post("https://crucore.com/api.php", usr)
                 .success(function (res) {
                     if (res.success) {
-                        $scope.msg = res.msg;
+                        if(usr.post_actions == "joinacts") $scope.msg = res.msg;
+                        if(usr.post_actions == "support") $scope.supmsg = res.msg;
                     } else {
                         alert("You are at Failure");
                         //var ply = new Ply({el: data.error});
@@ -74,30 +91,8 @@
 
         };
 
-        $scope.getSupport = function (support) {
-            $http.post("https://crucore.com/api.php", support)
-                .success(function (res) {
-                    if (res.success) {
-                        $scope.supmsg = res.msg;
-                    } else {
-                        alert("You are at Failure");
-                        //var ply = new Ply({el: data.error});
-                        //ply.open();
-                    }
-                });
-        }
+        $scope.scroll = 0;
 
-        $scope.load = function () {
-
-            $('#mainNav').affix({
-                offset: {
-                    top: 100
-                }
-            });
-        };
-
-        //don't forget to call the load function
-        $scope.load();
     }
 
 })();
