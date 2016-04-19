@@ -65,6 +65,10 @@
             return false;
         }
 
+        $scope.$on('$locationChangeStart', function(event) {
+            $scope.checkbg = ! $scope.checkURl();
+        });
+
         //accordion
         $scope.status = {
             isFirstOpen: true,
