@@ -45,4 +45,11 @@
     // Initialize WOW.js Scrolling Animations
     new WOW().init();
 
+    //change second level navbar width
+    $(window).resize(function () {
+        var w = $(".content-level2").width();
+        $("#sub-navbar").css("width", w);
+    });
+
+
 })(jQuery); // End of use strict

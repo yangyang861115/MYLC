@@ -23,6 +23,21 @@
             .when("/radio", {
                 templateUrl: "partials/radio.html"
             })
+            .when("/radio/sdouglass",{
+                templateUrl: "partials/sdouglass.html"
+            })
+            .when("/radio/archives",{
+                templateUrl: "partials/archives.html"
+            })
+            .when("/radio/stations",{
+                templateUrl: "partials/stations.html"
+            })
+            .when("/radio/dailyemail",{
+                templateUrl: "partials/dailyemail.html"
+            })
+            .when("/radio/contactus",{
+                templateUrl: "partials/contactus.html"
+            })
             .when("/support", {
                 templateUrl: "partials/support.html"
             })
@@ -55,6 +70,8 @@
     app.controller('PageCtrl', pageCtrl);
 
     function pageCtrl($scope, $location, $http, $sce) {
+
+        //render html code
         $scope.renderHtml = function (html_code) {
             return $sce.trustAsHtml(html_code);
         }
@@ -67,6 +84,8 @@
 
         $scope.$on('$locationChangeStart', function(event) {
             $scope.checkbg = ! $scope.checkURl();
+            //navigation highlight
+            $scope.location = $location.url();
         });
 
         //accordion

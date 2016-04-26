@@ -1,6 +1,41 @@
 .panel-default>.panel-heading  {
     background-color: #F9B625;
 }
+#sub-navbar {
+    background-color: #3eb1c8;
+    margin-top: 0px;
+    border-radius: 0px;
+    position: fixed;
+    top: 50px;
+    width:80%;
+
+}
+
+#sub-navbar .nav > li.active {
+    font-size: larger;
+    color: white !important;
+    background-color: rgba(71, 220, 244, 0.68);
+}
+
+#sub-navbar-list li{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+
+#sub-navbar-list li>a{
+    padding-left: 0px!important;
+    padding-right: 0px!important;
+}
+
+ul#sub-navbar-list {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+div.content-level2{
+   margin-top: 50px;
+}
 
 #learnFm input.ng-invalid.ng-touched {
     border-color: #a94442;
