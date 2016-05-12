@@ -4,7 +4,7 @@ window.onresize = function(event) {
   set_diagonals();
 }
 function set_diagonals(){
-  var width = $('.s_1').width();
+  var width = $('.s_1').width() || $(window).width();
   var height = width * 0.05;
   //console.log(width, height);
   $('.diagonal').css('border-left-width', width + 100);

@@ -1141,6 +1141,7 @@ footer span.h4 {
 #about .glyphicon { position:absolute; top:2px; right:0;}
 #about .panel-title a:hover, #about .panel-title a:focus { color:#fff; outline:none !important;}
 
+.audio150 { width: 125px; }
 
 
 @media only screen and (max-width: 1200px) {
@@ -1148,6 +1149,7 @@ footer span.h4 {
 		margin-top: 20px;
 	}
 	.panel .main_panel p { font-size:12px;}
+	
 }
 
 @media screen and (min-width: 768px) {
@@ -1158,4 +1160,10 @@ footer span.h4 {
 	.title { display:none;}
 	.main_panel h3{ display:block; font-size:22px; text-align:center; font-weight:bold;}
 	.panel .main_panel p { font-size:13px;}
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
 }

@@ -46,10 +46,16 @@
     new WOW().init();
 
     //change second level navbar width
-    $(window).resize(function () {
-        var w = $(".content-level2").width();
-        $("#sub-navbar").css("width", w);
-    });
+    //$(window).resize(function () {
+    //    var w = $(".content-level2").width();
+    //    $("#sub-navbar").css("width", w);
+    //    $("#sub-navbar").css("margin-left", "auto");
+    //    $("#sub-navbar").css("margin-right", "auto");
+    //    var leftw = ($(window).width() - w) / 2;
+    //    $("#sub-navbar").css("left", leftw);
+    //});
+
+
 
 
 })(jQuery); // End of use strict

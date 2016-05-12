@@ -18,7 +18,7 @@
                         <h2 class="section-heading">Welcome to MYLC Support</h2>
                         <hr class="primary">
                     </div>
-                    <div class="subtitle text-muted text-center">We are Here to Help!</div>
+                    <div class="subtitle text-muted text-center">We are here to help!</div>
                 </div>
                 <div ng-show="supmsg" ng-bind-html="renderHtml(supmsg)"></div>
             </div>
@@ -34,9 +34,9 @@
                             <input type="hidden" ng-model="support.post_actions" ng-init="support.post_actions='support'"/>
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <label class="sr-only" for="name">your name</label>
+                                    <label class="sr-only" for="name">name</label>
                                     <input type="text" class="form-control"
-                                           placeholder=" Your Name" name="nameline" id="name"
+                                           placeholder=" Name" name="nameline" id="name"
                                            ng-model="support.nameline" required/>
                                     <p class="text-danger"
                                        ng-show="supFm.nameline.$touched && supFm.nameline.$error.required">
@@ -46,9 +46,9 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <label class="sr-only" for="email">your email</label>
+                                    <label class="sr-only" for="email">email</label>
                                     <input type="email" class="form-control"
-                                           placeholder=" Your Email" name="email"
+                                           placeholder=" Email" name="email"
                                            id="email" ng-model="support.email" ng-pattern="EMAIL_PATTERN" required/>
                                     <p class="text-danger"
                                        ng-show="supFm.email.$touched && supFm.email.$error.required">
@@ -63,16 +63,16 @@
                             </div>
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <label class="sr-only" for="topic">your topic</label>
+                                    <label class="sr-only" for="topic">topic</label>
                                     <input type="topic" class="form-control" placeholder=" Subject"
                                            name="topic" id="topic" ng-model="support.topic"/>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-group col-xs-12">
-                                    <label class="sr-only" for="message">your message</label>
+                                    <label class="sr-only" for="message">message</label>
                                     <textarea name="message" rows="5" class="form-control"
-                                              placeholder=" Your Message" id="message"
+                                              placeholder=" Message" id="message"
                                               ng-model="support.message" required></textarea>
                                     <p class="text-danger"
                                        ng-show="supFm.message.$touched && supFm.message.$error.required">

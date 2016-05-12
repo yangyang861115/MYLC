@@ -5,12 +5,40 @@
         <div class="content-level2">
             <div class="row">
                 <div class="col-lg-12 text-center topmargin40">
-                    <h2 class="section-heading">Radio</h2>
-                    <hr class="primary">
-                    <p class="text-muted">The "<b>Making Your Life Count</b>" radio program, originally known as "<b>The Lighthouse Report</b>," has been broadcast to millions for many years running now. Each short, yet packed, program offers practical, relevant approaches and ideas through interviews with people just like you who are making their lives count for more. These ideas are designed to both inspire and help you to extend your influence for Christ to your extended communities. We are currently in conversations to expand our radio presence to new stations around the globe.</p>
+					<div class="paragraph" style="text-align:center;"><u><strong><font size="5"><a target="_blank" href="https://www.cru.org/reset.html">Global&nbsp;Outreach&nbsp;Day&nbsp;is May 21<br />&#8203;</a></font></strong></u><br /><font size="3">Want to join millions of people around the world and share Jesus Christ?&nbsp;The vision of <a target="_blank" href="https://www.cru.org/reset.html"><span>Global</span>&nbsp;<span>Outreach</span>&nbsp;<span>Day</span></a>&nbsp;is to build up a network of Christians worldwide, equipping and mobilizing them to share the Gospel to over 200 nations on&nbsp;</font><strong><font size="3">one single&nbsp;<span>day</span>. &nbsp;<u><a target="_blank" href="https://www.cru.org/reset.html">LEARN MORE</a></u></font></strong><br /><br /></div>
+					<div>
+                    	<div class="wsite-image wsite-image-border-none " style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+						  <a href='https://www.cru.org/reset.html' target='_blank'><img src="../img/radio/201605_feature-GlobalOutreachDay.jpg" alt="Global Outreach Day" style="width:auto;max-width:100%" /></a>
+                        </div>
+                    </div>               
                 </div>
-            </div>
-            <!-- end row -->
+            </div> <!-- end row -->
+            <div class="row"><hr /></div> 
+            <!-- LAST FIVE 1 MINUTE START HERE -->
+            <div>
+			  <h2 class="text-center">The Last Five One-Minute Broadcasts</h2>
+                <div class="row">
+                    <div class="col-sm-1">&nbsp;</div>
+                    <div class="col-sm-2 col-xs-12 text-center" ng-repeat="broadcast in broadcasts">
+                        <div class="service-box">
+                            <b>{{broadcast.date}}</b><br />
+                            <img ng-src="{{broadcast.image_link}}" class="avatar"><br />
+                            <h5>{{broadcast.title}}</h5>
+                            <div ng-bind-html="renderHtml(broadcast.description)"></div>
+                             <br />
+                            <audio controls style="width: 170px;" class="text-left">
+                                <!-- <source src="horse.ogg" type="audio/ogg" /> -->
+                                <source ng-src="{{trustSrc(broadcast.mp3_link)}}" type="audio/mpeg"/>
+                                Your browser does not support the audio element.
+                            </audio>
+                        </div>
+                    </div>
+                    <div class="col-sm-1">&nbsp;</div>
+                </div>
+			</div>
+            <!-- end of last five 1 minute broadcasts -->
+
+            <div class="row"><hr /></div> 
             <div class="row">
                 <div class="col-sm-4 col-xs-12 text-center">
                     <div class="service-box">
@@ -34,10 +62,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-
-    </div>
-    <!-- end container -->
+            
+            
+        </div> <!-- end content-level-2 -->
+    </div>  <!-- end container -->
 </section>
 
 

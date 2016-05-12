@@ -1,110 +1,75 @@
-<section id="joinactions">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <div class="subtitle text-muted text-center" ng-if="!msg">
-                    Please fill out the following to connect with our "Making Your Life Count" coaching team.<br>
-                    Rest assured we respect your privacy and your time. You decide how much (<i>or little</i>) you want to talk about this.
-                </div>
-                <div ng-show="msg" ng-bind-html="renderHtml(msg)">{{msg}}</div>
-            </div>
-        </div><!-- end row -->
-    </div> <!-- end container -->
-</section> -->
-
-<section id="form">
-    <div class="container">
-        <div class="row">
-            <!--- form row begins -->
-            <div class="col-lg-8 col-lg-offset-2 text-center">
-                <form id="learnFm" name="learnFm" class="form" novalidate ng-if="!msg">
-                    <input type="hidden" name = "post_actions" value="joinacts" />
-                    <div class="row">
-                        <div class="form-group col-xs-12 has-feedback">
-                            <label class="sr-only" for="name">your name</label>
-                            <input type="text" class="form-control"
-                                   id="name" placeholder=" Your Name" name="nameline"
-                                   ng-model="user.nameline" required/>
-                            <p class="text-danger"
-                               ng-show="learnFm.nameline.$touched && learnFm.nameline.$error.required">
-                                Your name is required
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-xs-12 has-feedback">
-                            <label class="sr-only" for="email">email</label>
-                            <input type="email" class="form-control" id="email"
-                                   placeholder=" Your Email" name="email"
-                                   ng-model="user.email" ng-pattern="EMAIL_PATTERN" required />
-                            <p class="text-danger"
-                               ng-show="learnFm.email.$touched && learnFm.email.$error.required">
-                                The email is required and cannot be empty
-                            </p>
-
-                            <p class="text-danger"
-                               ng-show="learnFm.email.$dirty && learnFm.email.$error.pattern">The input is
-                                not a valid email address
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="form-group col-sm-4 col-xs-12">
-                            <div class="checkbox">
-                                <input type="checkbox" id="ebook" name="ebook"
-                                       class="form-control"
-                                       ng-model="user.ebook">
-                                <label for="ebook"><b>Free eBook</b></label>
-                            </div>
-                            <div class="small text-justify">The "Making Your Life Count" booklet has been used for over 30 years to provide practical, easily applicable ideas. It recently has been revised as a short eBook which will be emailed as a 2mb PDF file.</div>
-                        </div>
-                        <div class="form-group col-sm-4  col-xs-12">
-                            <div class="checkbox">
-                                <input type="checkbox" id="interact" name="interact"
-                                       class="form-control"
-                                       ng-model="user.interact"/>
-                                <label for="interact"><b>Coaching Emails</b></label>
-                            </div>
-                            <div class="small text-justify">An interactive email series covering WALK, PRAY, CARE and SHARE. They give a fun way to learn the content. Sending interval is based on your rate of response.</div>
-                        </div>
-                        <div class="form-group col-sm-4  col-xs-12">
-                            <div class="checkbox">
-                                <input type="checkbox" id="refluate" name="refluate"
-                                       class="form-control"
-                                       ng-model="user.refluate"/>
-                                <label for="refluate"><b>Reflect & Evaluate Link</b>*</label>
-                            </div>
-                            <div class="small text-justify">Creative new tools to help you spend some time to reflect, evaluate and act in making your life count for even more. Sent as a custom link to your email.</div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div id="success">
-                            <div class="form-group col-xs-12">
-                                <button type="submit" id="frmsbmt" class="btn btn-primary btn-xl wow tada"
-                                        ng-disabled="learnFm.$invalid" ng-click="subscribe(user)">
-                                    Get Started<i class="fa fa-send"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="row">
-                        <div class="form-group col-xs-12">
-                            <small><i>
-                                Should your interests change, you can easily unsubscribe at any time.</i></small>
-                        </div>
-                        <div class="form-group col-xs-12">
-                            <i class="fa fa-asterisk fa-2x"></i><b>Reflect & Evaluate Link</b>: This private, special section of the site provides you with cutting edge ideas tailored to your strengths and needs.
-                        </div>
-                    </div>
-                </form>
-            </div>
+<div class="row">
+    <h2>The Last Five One-Minute Broadcasts</h2>
+    <div class="col-sm-1">&nbsp;</div>
+    <div class="col-sm-2 col-xs-12 text-center">
+        <div class="service-box">
+            <b>May 6</b><br />
+            <img src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/6437498.jpg?150" width="125px" height="150px"><br />
+            <h5>PRAYER</h5>
+            <p class="text-muted text-left">Musician Tim Timmons has an interesting perspective on prayer. He says, “prayer doesn’t change anything, but Jesus changes everything.” &nbsp;On today’s <em>Making Your Life Count</em> Tim speaks from his own experience in his fight with cancer.</p>
+            <br />
+            <audio controls style="width: 100px;" class="text-left">
+                <!-- <source src="horse.ogg" type="audio/ogg" /> -->
+                <source src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/mylc_05-06-2016_tim_timmons.mp3" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
         </div>
-        <!--- end form -->
     </div>
-</section>
+    <div class="col-sm-2 col-xs-12 text-center">
+        <div class="service-box">
+            <b>May 5</b><br />
+            <img src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/5987275.jpg?164" width="125x" height="150px"><br />
+            <h5>PROCESS</h5>
+            <p class="text-muted text-left">​Looking back … do you remember the process God took you through on your journey to Him? Well, today on&nbsp;<em>Making&nbsp;Your Life Count</em>,&nbsp;<strong><a target="_blank" href="http://www.cru.org/">Dan Keller</a></strong>&nbsp;gives us his own personal story.</p>
+            <br />
+            <audio controls style="width: 100px;">
+                <!-- <source src="horse.ogg" type="audio/ogg" /> -->
+                <source src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/mylc_05-05-2016_dan_keller.mp3" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="col-sm-2 col-xs-12 text-center">
+        <div class="service-box">
+            <b>May 4</b><br />
+            <img src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/9514843.jpg?127" width="125px" height="150px"><br />
+            <h5>CARE</h5>
+            <p class="text-muted text-left"><span>You know, caring for people can sometimes speak louder than words. And Bernadette Todd says taking time to care for her neighbor ultimately made an eternal difference.</p>
+            <br />
+            <audio controls style="width: 100px;">
+                <!-- <source src="horse.ogg" type="audio/ogg" /> -->
+                <source src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/mylc_05-04-2016_bernadette_todd.mp3" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="col-sm-2 col-xs-12 text-center">
+        <div class="service-box">
+            <b>May 3</b><br />
+            <img src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/8895864.jpg?128" width="120px" height="150px"><br />
+            <h5>SHARING</h5>
+            <p class="text-muted text-left">Sharing your faith can be scary, but that doesn't stop&nbsp;<strong><a target="_blank" href="https://give.cru.org/0655415">Erica Stevens</a></strong>. &nbsp;She has found that faith will actually replace fear in our lives. She explains on today's&nbsp;<em>Making Your Life Count</em>.</p>
+            <br />
+            <audio controls style="width: 100px;">
+                <!-- <source src="horse.ogg" type="audio/ogg" /> -->
+                <source src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/mylc_05-03-2016_erica_stevens.mp3" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="col-sm-2 col-xs-12 text-center">
+        <div class="service-box">
+            <b>May 2</b><br />
+            <img src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/5153524.jpg?147" width="125px" height="150px"><br />
+            <h5>ENCOURAGEMENT</h5>
+            <p class="text-muted text-left">When <strong><a target="_blank" href="http://laurenchandler.com/">Lauren Chandler’s</a></strong> husband, Matt, was diagnosed with a brain tumor, their lives and their faith were tested. Lauren says a passage in the Bible has been a great encouragement to her.</p>
+            <br />
+            <audio controls style="width: 100px;">
+                <!-- <source src="horse.ogg" type="audio/ogg" /> -->
+                <source src="http://www.makingyourlifecountradio.org/uploads/1/8/4/9/18490886/mylc_05-02-2016_lauren_chandler.mp3" type="audio/mpeg"/>
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <div class="col-sm-1">&nbsp;</div>
+</div>

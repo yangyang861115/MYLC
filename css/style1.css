@@ -1,16 +1,23 @@
 .panel-default>.panel-heading  {
     background-color: #F9B625;
 }
-
 #sub-navbar {
+    z-index: 1;
     background-color: #3eb1c8;
-} 
+    margin-top: 0px;
+    border-radius: 0px;
+    position: fixed;
+    top: 50px;
+    left: 0px;
+    width:90%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
 #sub-navbar .nav > li.active {
     font-size: larger;
     color: white !important;
     background-color: rgba(71, 220, 244, 0.68);
-	min-height: 50px;
 }
 
 #sub-navbar-list li{
@@ -22,13 +29,7 @@
 #sub-navbar-list li>a{
     padding-left: 0px!important;
     padding-right: 0px!important;
-	min-height: 50px;
 }
-
-#sub-navbar-list li>a:hover {
-    background-color: rgba(173,207,224,1.00);
-}
-
 
 ul#sub-navbar-list {
     margin-left: 0px;
@@ -38,7 +39,6 @@ ul#sub-navbar-list {
 div.content-level2{
    margin-top: 50px;
 }
-/* form */
 
 #learnFm input.ng-invalid.ng-touched {
     border-color: #a94442;
@@ -64,4 +64,8 @@ div.content-level2{
     border-color: #3c763d;
 }
 
-/* radio */
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
